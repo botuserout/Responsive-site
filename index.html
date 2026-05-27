@@ -8659,5 +8659,38 @@
         data-key-public=""
       ></div>
     </div>
+    <!-- Source Code Protection Script -->
+    <script>
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      // Disable key shortcuts for developer tools and view source
+      document.addEventListener("keydown", (e) => {
+        // F12 key
+        if (e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (Inspect elements/Console)
+        if (
+          e.ctrlKey &&
+          e.shiftKey &&
+          (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)
+        ) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode === 85) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+S (Save Page)
+        if (e.ctrlKey && e.keyCode === 83) {
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
   </body>
 </html>
